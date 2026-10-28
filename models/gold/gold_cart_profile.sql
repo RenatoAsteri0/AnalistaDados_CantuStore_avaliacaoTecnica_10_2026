@@ -1,0 +1,31 @@
+-- Grao: uma linha por carrinho, derivada da OBT no grao de item.
+select distinct
+    cart_pk,
+    cart_createdts,
+    cart_currency_id,
+    user_id,
+    user_type,
+    user_login_disabled,
+    user_newsletter_opt_in,
+    user_base_store_id,
+    site_id,
+    payment_mode_id,
+    payment_mode_code,
+    payment_mode_active,
+    payment_mode_net,
+    payment_info_id,
+    payment_installments,
+    delivery_address_id,
+    delivery_town,
+    delivery_district,
+    delivery_region_code,
+    delivery_region_code_short,
+    payment_address_id,
+    payment_town,
+    payment_district,
+    payment_region_code,
+    payment_region_code_short,
+    cart_source_pk_copies,
+    cart_had_duplicate_pk
+from {{ ref('obt_cartentries') }}
+where cart_pk is not null

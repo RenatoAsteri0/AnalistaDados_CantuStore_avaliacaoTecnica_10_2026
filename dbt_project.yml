@@ -1,0 +1,19 @@
+name: prova_analista_dados
+version: '1.0.0'
+config-version: 2
+profile: prova_analista_dados
+
+model-paths: [models]
+macro-paths: [macros]
+test-paths: [tests]
+clean-targets: [target, dbt_packages]
+
+vars:
+  data_root: C:/Users/renat/Documents/pythonNote/professional_renato/prova
+
+models:
+  prova_analista_dados:
+    silver:
+      +materialized: view
+    gold:
+      +materialized: table

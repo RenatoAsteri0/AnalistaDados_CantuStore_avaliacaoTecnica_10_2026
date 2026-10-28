@@ -1,0 +1,7 @@
+prova_analista_dados:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: target/prova_analista_dados.duckdb
+      threads: 4
